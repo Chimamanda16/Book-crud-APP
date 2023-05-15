@@ -7,7 +7,8 @@ let Book = new Schema({
     type: String,
   },
   book_author: {
-    type: String,
+    type: Schema.Types.ObjectId,
+    ref: "Author",
   },
   book_description: {
     type: String,
