@@ -2,6 +2,11 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const mongoose = require("mongoose");
+const router = require("./routes/index.routes");
+
+// Middleware
+app.use(express.json());
+app.use(router);
 
 // Connect to MongoDB
 mongoose
@@ -16,7 +21,3 @@ mongoose
     console.log(error);
   });
 
-module.exports = app;
-const bookRoutes = require('./routes/index.routes.js');
-
-app.use('/', bookRoutes);
