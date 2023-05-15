@@ -15,3 +15,8 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
+
+module.exports = app;
+const bookRoutes = require('./routes/index.routes.js');
+
+app.use('/', bookRoutes);
