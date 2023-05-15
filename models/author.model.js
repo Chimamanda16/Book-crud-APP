@@ -4,9 +4,11 @@ const Schema = mongoose.Schema;
 let Author = new Schema({
   author_name: {
     type: String,
+    required: true,
   },
   author_age: {
-    type: String,
+    type: Number,
+    required: false,
   },
   author_books: [
     {
