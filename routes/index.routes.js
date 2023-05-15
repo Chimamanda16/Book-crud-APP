@@ -1,5 +1,14 @@
-//index rou
+//index route
 // Path: routes\index.routes.js
-app.get("/3000", (req, res) =>{
-    console.log("Server has started on port 3000");
+const express = require('express');
+const router = express.Router();
+const Book = require("../models/book.model.js");
+
+router.get('/', (req, res) => {
+    console.log('Connecting');
+    Book.find().then((response) =>{
+        res.send(response);
+    }); 
 });
+
+module.exports = router;
